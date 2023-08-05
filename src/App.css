@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+	--gradient: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #222831;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+}
+.card-container{
+  width: 300px;
+  height: 55vh;
+ color: #ffffff;
+}
+/* .card1{
+  width: 300px;
+  height: 55vh;
+  background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  border-radius: 20px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+} */
+.card{
+  /* position: absolute; */
+  background-image: var(--gradient);
+  width: 300px;
+  height: 55vh;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  opacity: 0.9;
+  border-radius: 20px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .top,
+.card .lower{
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+.top span:first-of-type{
+  font-size: 20px;
+  font-weight: 800;
+}
+.card .lower span:nth-child(2){
+  font-size: 2rem;
+  font-weight: 800;
+}
+.card .lower span:nth-child(3){
+  font-size: 1rem;
+  font-weight: 600;
+}
+.card2{
+  width: 450px;
+  height: 55vh;
+  background-color: rgb(52, 58, 66);
+  margin-left: -25px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+}
+.card2 .box1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 45px;
+  padding: 20px;
+}
+.field{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.card2 .box1 span{
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card2 .box2{
+  margin-left: 45px;
+  display: flex;
+  justify-content: center;
+}
+.card2 .box2 .small-box{
+  display: flex;
+  flex-direction: column;
+ background-color: #222831;
+  padding: 10px;
+  text-align: center;
+ 
+  cursor: pointer;
+}
+.card2 .box2 .small-box span{
+  margin-bottom: 8px;
+  
+}
+.card2 .box2 .small-box:first-of-type{
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 10px;
+}
+.card2 .box2 .small-box:hover{
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 10px;
+  transform: scale(1.2);
+  transition: transform 300ms ease;
 }
 
-.App-link {
-  color: #61dafb;
+.box3{
+  margin-left: 25px;
+  background-color: rgba(0, 123, 255, 0.736);
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  width: 20vw;
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
 }
+.box3 input{
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #ffffff;
+}
+.box3 input::placeholder{
+  color: #ffffff;
+}
+.fa-sun{
+  font-size: 22px;
+  color: rgb(247, 108, 2);
+}
+.lower .fa-sun{
+  font-size: 36px;
+}
+@media(max-width: 750px){
+  .card2{
+    width: 350px;
+  }
+  .card2 .box1{
+    margin-left: 10px;
+  }
+  .box3{
+    width: 80%;
+  }
+}
+@media(max-width: 640px){
+  .card-container,
+  .card{
+    height: 35vh;
+    max-width: 350px;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+  .card2{
+    margin-left: 0;
+    margin-top: -90px;
+    border-radius: 0 0 20px 20px;
+    height: 60vh;
+    flex-wrap: wrap;
+    max-width: 300px !important;
+  }
+  .card2 .box1{
+    margin-top: 15px;
+  }
+  .field{
+    max-width: 250px;
+    flex-wrap: wrap;
+  }
+  .card2 .box1{
+    padding: 20px 10px;
+  }
+  .card2 .box2,
+  .card2 .box1{
+    margin-left: 0;
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
